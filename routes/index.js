@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
     if (err) throw err;
     con.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
       if (err) throw err;
-      console.log(result);
     });
   });
 
@@ -28,7 +27,6 @@ router.get('/salarie', function(req,res,next){
     if (err) throw err;
     con.query("SELECT * FROM employe where num_service = 20", function (err, result, fields) {
       if (err) throw err;
-      console.log(result);
     });
     res.render('salarie', { title: 'TpMYSQL' });
 })});
