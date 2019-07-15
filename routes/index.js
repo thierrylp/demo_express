@@ -17,12 +17,13 @@ con.connect(function(err) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  /*con.connect(function(err) {
+  con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
       if (err) throw err;
+      console.log(result);
     });
-  });*/
+  });
 
   res.render('index', { title: 'TpMYSQL' });
 });
