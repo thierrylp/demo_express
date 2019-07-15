@@ -29,13 +29,13 @@ function handleDisconnect() {
 }
 handleDisconnect();
 
-con.connect(function(err) {
+connection.connect(function(err) {
   if (err) 
   {
     console.log("!!!!!!!!!!!!!!premiere erreur");
     handleDisconnect();
   }
-  con.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
+  connection.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
     if (err) 
     {
       console.log("!!!!!!!!!!!!!!deuxième erreur");
@@ -47,13 +47,13 @@ con.connect(function(err) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  con.connect(function(err) {
+  connection.connect(function(err) {
     if (err) 
     {
       console.log("!!!!!!!!!!!!!!troisième erreur");
       handleDisconnect();
     }
-    con.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
+    connection.query("SELECT * FROM employe where num_service = 30", function (err, result, fields) {
       if (err) 
       {
         console.log("!!!!!!!!!!!!!!quatrième erreur");
